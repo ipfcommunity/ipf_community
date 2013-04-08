@@ -16,6 +16,14 @@ $type = $_POST['type_insert'];
                         elseif ($type == 'matiere') {  
                             
                         } 
+      // si user   
+                        elseif ($type == 'user') {  
+                            
+                        } 
+     // si user   
+                        elseif ($type == 'salle') {  
+                            
+                        }
                         
                         
 header('location: administration.php');

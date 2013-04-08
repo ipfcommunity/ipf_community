@@ -24,7 +24,7 @@
                             <form method='post' action = 'insert.php'>
                                    
                                    <b>Nom de la section (SIO, MUC, etc): </b><input type='text' name='section_nom' />
-                                   <b>Type de diplome (BAC, BTS, etc): </b><input type='text' name='section_type' /></br>
+                                   <b>Type de diplome (BAC, BTS, etc): </b><input type='text' name='section_diplome' /></br>
                                    <b>Specialité (SLAM, SISR, etc): </b><input type='text' name='section_option' />
                                    
                                    <input type='hidden' name='type_insert' value='section'/>
@@ -103,7 +103,7 @@
                                    <b>Prénom d'utilisateur: </b><input type='text' name='user_prenom'/><br>
                                    <b>Mail d'utilisateur: </b><input type='E-mail' name='user_mail' value='@moniris.com' id='input_mail'/>
                                    <b>Mot de passe de l'utilisateur: </b><input type='password' name='user_password'/><br>
-                                   <b>Classe (si eleve): </b><select name='cour_classe'><option value ='null'>Choisir</option>";
+                                   <b>Classe (si eleve): </b><select name='user_classe'><option value ='null'>Choisir</option>";
                    //classe
                                     $requete_classe = "select ID_CLASSE, NOM_CLASSE  from CLASSE";
                                     $reponse_classe = $bdd->query($requete_classe);
@@ -187,8 +187,8 @@
                                    echo"</select>   
                                        
                                        <b>Professeur: </b><select name='cour_prof'><option value ='null'>Choisir</option>";
-                   //ProfesseurUCASE(LEFT(CompanyIndustry, 1)
-                                    $requete_professeur = "select ID_USER, concat(PRENOM_USER,' ',upper(NOM_USER)) as nom  from PROFFESSEUR";
+                   //Professeur
+                                    $requete_professeur = "select ID_USER, concat(PRENOM_USER,' ',NOM_USER) as nom  from PROFFESSEUR";
                                     $reponse_professeur = $bdd->query($requete_professeur);
                                     while($donnees_professeur = $reponse_professeur -> fetch()){
                                         $id=$donnees_professeur['ID_USER'];

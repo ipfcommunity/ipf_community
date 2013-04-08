@@ -987,6 +987,31 @@ page cour
     width: 270px;
     text-align: right;
 }
+
+#affiche_table
+{
+    margin: auto;  
+    border:solid 3px #565455;
+    border-collapse: collapse;
+    width: 80%;
+
+}
+
+#affiche_td_titre
+{
+    border:solid 2px #565455;
+    width: 33%;
+    background-color: #ff5c00;
+    padding: 2px;
+}
+#affiche_td
+{
+    border:solid 2px #565455;
+    width: 33%;
+    background-color: #CDDE47;
+    padding: 2px;
+}
+
 /*Ce document a été réalisé en octobre 2012. 
 Dans le cadre d'un projet dans l'école iris, 
 par camille pire, maxime maréchal et jean-marie pujade.*/

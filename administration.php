@@ -16,7 +16,7 @@
             try {
                     $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
                     $bdd = new PDO('mysql:host=localhost;dbname=ipf_com', $_SESSION['login'], $_SESSION['pwd'], $pdo_options);
-                  //trou duc
+                  //vache à lait
 // section                    
                     echo    "<div id='bloc_admin'>
                             <h3>Ajout section</h3></br>

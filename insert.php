@@ -12,10 +12,12 @@ $type = $_POST['type_insert'];
                               $reponse_section = $bdd->query($requete_section);
                               $donnee_section = $reponse_section->fetch(PDO::FETCH_ASSOC);
                               $id_section = $donnee_section['id']+1;
+                              
                       // recuperation des données
-                            $nom_section = $_POST['section_nom'];
-                            $diplome = $_POST['section_diplome'];  
-                            $specialiter = $_POST['section_option'];
+                            $nom_section = strtoupper($_POST['section_nom']);
+                            $diplome = strtoupper($_POST['section_diplome']);  
+                            $specialiter = strtoupper($_POST['section_option']);
+                            
                       //insertion de la section          
                             $requete_insert_section = " insert into SECTION values(:ID_SECTION,:NOM_SECTION, :DIPLOME, :SPECIALITER)";
                             $reponse_insert_section = $bdd->prepare($requete_insert_section);
@@ -35,7 +37,7 @@ $type = $_POST['type_insert'];
                               $donnee_classe = $reponse_classe->fetch(PDO::FETCH_ASSOC);
                               $id_classe = $donnee_classe['id']+1;
                       // recuperation des données
-                            $nom_classe = $_POST['classe_nom'];
+                            $nom_classe = ucfirst($_POST['classe_nom']);
                             $id_section = $_POST['section_classe'];  
                            
                       //insertion de la classe          
@@ -56,7 +58,7 @@ $type = $_POST['type_insert'];
                               $donnee_matiere = $reponse_matiere->fetch(PDO::FETCH_ASSOC);
                               $id_matiere = $donnee_matiere['id']+1;
                       // recuperation des données
-                            $nom_matiere = $_POST['matiere_nom'];
+                            $nom_matiere = ucfirst($_POST['matiere_nom']);
                             
                            
                       //insertion de la matiere          
@@ -158,9 +160,48 @@ $type = $_POST['type_insert'];
      // si salle  
                         elseif ($type == 'salle') {  
                             
+                            // création de l'id
+                                            
+                              $requete_salle = "SELECT max(ID_SALLE) as id FROM SALLE";
+                              $reponse_salle = $bdd->query($requete_salle);
+                              $donnee_salle = $reponse_salle->fetch(PDO::FETCH_ASSOC);
+                              $id_salle = $donnee_salle['id']+1;
+                              
+                      // recuperation des données
+                            $nom_salle = $_POST['salle_nom'];
+                            $batiment = ucfirst($_POST['salle_batiment']);
+                            $num_salle = $_POST['salle_numero'];
+                           
+                      //insertion de la salle          
+                            $requete_insert_salle = " insert into SALLE values(:ID_SALLE, :NOM_SALLE, :BATIMENT, :NUM_SALLE)";
+                            $reponse_insert_salle = $bdd->prepare($requete_insert_salle);
+                            $insert_salle = $reponse_insert_salle -> execute(array(
+                                'ID_SALLE' => $id_salle,
+                                'NOM_SALLE' => $nom_salle,
+                                'BATIMENT' => $batiment,
+                                'NUM_SALLE' => $num_salle)); 
+                            
                         }
-    // si salle  
+    // si cour  
                         elseif ($type == 'cour') {  
+                          
+                                                      
+                      // recuperation des données
+                            $cour_classe = $_POST['cour_classe'];
+                            $cour_matiere = $_POST['cour_matiere'];
+                            $cour_salle = $_POST['cour_salle'];
+                            $cour_prof = $_POST['cour_prof'];
+                           
+                      //insertion de la cour          
+                            $requete_insert_cour = " insert into ENSEIGNE values(:ID_CLASSE, :ID_MATIERE, :ID_SALLE, :ID_USER, :DATE_DEBUT, :DATE_FIN)";
+                            $reponse_insert_cour = $bdd->prepare($requete_insert_cour);
+                            $insert_cour = $reponse_insert_cour -> execute(array(
+                                'ID_CLASSE' => $cour_classe,
+                                'ID_MATIERE' => $cour_matiere,
+                                'ID_SALLE' => $cour_salle,
+                                'ID_USER' => $cour_prof,
+                                'DATE_DEBUT' => NULL,
+                                'DATE_FIN' => NULL)); 
                             
                         }
                         

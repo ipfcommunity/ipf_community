@@ -56,9 +56,14 @@
 
                                     while($donnees = $reponse -> fetch())
                                             {
+                                        
+                                                       $section = $donnees['ID_SECTION'];
+                                                        $requete_section = "SELECT concat(NOM_SECTION,' ',SPECIALITER) as nom FROM section WHERE id_section = '$section'";
+                                                        $reponse_section = $bdd->query($requete_section);
+                                                        $donnee_section = $reponse_section->fetch(PDO::FETCH_ASSOC);
                                                     echo"<tr>
                                                             <td id='affiche_td'>".$donnees['ID_CLASSE']."</td>
-                                                            <td id='affiche_td'>".$donnees['ID_SECTION']."</td>
+                                                            <td id='affiche_td'>".$section." -> ".$donnee_section['nom']."</td>
                                                             <td id='affiche_td'>".$donnees['NOM_CLASSE']."</td>
                                                          </tr>";
                                             }
@@ -118,28 +123,40 @@
                                             }
                                     echo"</table><br>";
                  //eleve                   
-                                $requete = "select * from IPF_USER where NB_LEVEL = 2";
+                                $requete = "select * from eleve";
                                     $reponse = $bdd->query($requete);
+                                    
+                                    
                                     echo"<br><h3>Elèves</h3><br>
                                         <table id='affiche_table'>
                                         <tr>
                                             <td id='affiche_td_titre'>ID_USER</td>
+                                            <td id='affiche_td_titre'>ID_CLASSE</td>
                                             <td id='affiche_td_titre'>NB_LEVEL</td>
                                             <td id='affiche_td_titre'>NOM_USER</td>
                                             <td id='affiche_td_titre'>PRENOM_USER</td>
                                             <td id='affiche_td_titre'>MAIL_ECOLE</td>
+                                            <td id='affiche_td_titre'>MAIL_PERSO</td>
                                             <td id='affiche_td_titre'>MOT_DE_PASSE (MDP md5)</td>
                                             
                                         </tr>";
 
                                     while($donnees = $reponse -> fetch())
                                             {
+                                        
+                                                    $classe = $donnees['ID_CLASSE'];
+                                                        $requete_classe = "SELECT NOM_CLASSE FROM CLASSE WHERE ID_CLASSE = '$classe'";
+                                                        $reponse_classe = $bdd->query($requete_classe);
+                                                        $donnee_classe = $reponse_classe->fetch(PDO::FETCH_ASSOC);
+                                                    
                                                     echo"<tr>
                                                             <td id='affiche_td'>".$donnees['ID_USER']."</td>
-                                                            <td id='affiche_td'>".$donnees['NB_LEVEL']."</td>
+                                                            <td id='affiche_td'>".$classe." -> ".$donnee_classe['NOM_CLASSE']."</td>    
+                                                            <td id='affiche_td'>2</td>
                                                             <td id='affiche_td'>".$donnees['NOM_USER']."</td>
                                                             <td id='affiche_td'>".$donnees['PRENOM_USER']."</td>
                                                             <td id='affiche_td'>".$donnees['MAIL_ECOLE']."</td>
+                                                                <td id='affiche_td'>".$donnees['MAIL_PERSO']."</td>
                                                             <td id='affiche_td'>".$donnees['MDP']."</td>
                                                          </tr>";
                                             }
@@ -228,7 +245,58 @@
                                     echo"</table>";
                                     
                         }            
-                        
+             
+             // si cour    
+                        elseif ($type == 'cour') {
+                            
+                             $requete = "select * from enseigne";
+                                    $reponse = $bdd->query($requete);
+                                    echo"<table id='affiche_table'>
+                                        <tr>
+                                            <td id='affiche_td_titre'>ID_CLASSE</td>
+                                            <td id='affiche_td_titre'>ID_MATIERE</td>
+                                            <td id='affiche_td_titre'>ID_SALLE</td>
+                                            <td id='affiche_td_titre'>ID_USER</td>
+                                            <td id='affiche_td_titre'>DATE_DEBUT (pour agenda)</td>
+                                            <td id='affiche_td_titre'>DATE_FIN (pour agenda)</td>
+                                            
+                                            
+                                        </tr>";
+
+                                    while($donnees = $reponse -> fetch())
+                                            {
+                                                $classe = $donnees['ID_CLASSE'];
+                                                        $requete_classe = "SELECT NOM_CLASSE FROM CLASSE WHERE ID_CLASSE = '$classe'";
+                                                        $reponse_classe = $bdd->query($requete_classe);
+                                                        $donnee_classe = $reponse_classe->fetch(PDO::FETCH_ASSOC);
+                                                
+                                                $matiere = $donnees['ID_MATIERE'];
+                                                        $requete_matiere = "SELECT NOM_MATIERE FROM MATIERE WHERE ID_MATIERE = '$matiere'";
+                                                        $reponse_matiere = $bdd->query($requete_matiere);
+                                                        $donnee_matiere = $reponse_matiere->fetch(PDO::FETCH_ASSOC);        
+                                                
+                                                $salle = $donnees['ID_SALLE'];
+                                                        $requete_salle = "SELECT NUM_SALLE FROM SALLE WHERE ID_SALLE = '$salle'";
+                                                        $reponse_salle = $bdd->query($requete_salle);
+                                                        $donnee_salle = $reponse_salle->fetch(PDO::FETCH_ASSOC);
+                                                        
+                                                $prof = $donnees['ID_USER'];
+                                                        $requete_prof = "SELECT concat(PRENOM_USER,' ',upper(NOM_USER)) as nom  from IPF_USER WHERE ID_USER = '$prof'";
+                                                        $reponse_prof = $bdd->query($requete_prof);
+                                                        $donnee_prof = $reponse_prof->fetch(PDO::FETCH_ASSOC);        
+                                                        
+                                                    echo"<tr>
+                                                            <td id='affiche_td'>".$classe." -> ".$donnee_classe['NOM_CLASSE']."</td>
+                                                            <td id='affiche_td'>".$matiere." -> ".$donnee_matiere['NOM_MATIERE']."</td>
+                                                            <td id='affiche_td'>".$salle." -> ".$donnee_salle['NUM_SALLE']."</td>
+                                                            <td id='affiche_td'>".$prof." -> ".$donnee_prof['nom']."</td> 
+                                                            <td id='affiche_td'>".$donnees['DATE_DEBUT']."</td>
+                                                            <td id='affiche_td'>".$donnees['DATE_FIN']."</td>     
+                                                         </tr>";
+                                            }
+                                    echo"</table>";
+                                    
+                        }               
                         
                    
                 }//fin try

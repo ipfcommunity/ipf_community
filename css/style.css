@@ -982,6 +982,11 @@ page cour
     margin-top: 20px;
 }
 
+#input_mail
+{
+    width: 270px;
+    text-align: right;
+}
 /*Ce document a été réalisé en octobre 2012. 
 Dans le cadre d'un projet dans l'école iris, 
 par camille pire, maxime maréchal et jean-marie pujade.*/

@@ -1,0 +1,987 @@
+
+/*Les differentes font:
+
+font-family: 'Poiret One', cursive;
+font-family: 'Codystar', cursive;
+font-family: 'Numans', sans-serif;
+font-family: 'Coustard', serif;
+font-family: 'Monoton', cursive;
+font-family: 'Kranky', cursive;
+font-family: 'Lobster', cursive;
+
+couleur:
+gris claire: #dcdcdc
+gris foncé: #565455
+orange: #ff5c00  
+vert: #CDDE47
+bleu:	#48c1dc
+
+
+modifier le 20/11/2012 par camille.
+*/
+
+
+
+
+body
+{
+    font-family: 'Numans', sans-serif;
+   background-image:url('../image/bedge_grunge.png');
+    background-repeat: repeat;
+    
+   
+}
+
+
+
+/*#################################################################################################################################*/
+/*-----------mise en forme du texte-------------*/
+/*Titre*/
+
+p
+{
+
+}	
+
+
+h1 /* modification apportée par jm le 12/02/2013 */
+{
+    font-size: 5em;
+    text-align: center;	
+    font-family: 'Lobster', cursive;
+    position: absolute;
+    top:20%;
+    right: 30%;
+    left: 30%;
+    color: #ff5c00;
+    top: 50px;
+    text-shadow:  2px  2px #000000;
+    z-index:13;
+}
+h3
+{
+    font-size: 2em;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    text-decoration: underline;
+}
+h4 /*modifier par camille le 12/02*/
+{
+     font-size: 1em;
+    text-align: left;
+    font-family: 'Lobster', cursive;
+    text-decoration: underline;
+}
+
+h6
+{
+
+    font-size: 0.5em;	
+}
+b
+{
+    font-family: 'Coustard', serif;
+}
+#monhorloge
+{
+    font-size: 4.5em;
+    color: #565455;	
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    position: fixed;
+    bottom: 5%;
+    left: 1%;
+}
+input[type=submit], input[type=reset]
+{
+    background-color: #ff5c00;
+    color: #ffffff;
+    border: none;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    text-align: center;
+    text-shadow:  -1px  -1px #000000;
+    border-radius:40px;
+    margin:  7px;
+    height: 30px;
+    -webkit-box-shadow: 1px 1px 1px 1px #565455;
+    box-shadow: 1px 1px 1px 1px #565455;  
+}
+input[type=submit]:hover, input[type=reset]:hover
+{
+    background-color: #ffffff;
+    color: #ff5c00;
+    border: none;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    text-align: center;
+    text-shadow:  -1px  -1px #000000;
+    border-radius:40px;
+    margin:  7px;
+    height: 30px;
+    -webkit-box-shadow: 1px 1px 1px 1px #565455;
+    box-shadow: 1px 1px 1px 1px #565455;  
+}
+
+
+/*#####################################normalisation des boutton###################################*/
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+
+button, input, select, textarea { font-size: 100%; margin-right: 7px; margin-top:6px;  vertical-align: baseline; *vertical-align: middle; }
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ */
+
+button, input { line-height: normal; }
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ * 3. Correct inner spacing displayed oddly in IE7 (doesn't effect IE6)
+ */
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+
+/*
+ * Re-set default cursor for disabled elements
+ */
+
+button disabled , input disabled  { cursor: default; }
+
+/*
+ * Consistent box sizing and appearance
+ */
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+/*
+ * Remove inner padding and border in FF3/4: h5bp.com/l
+ */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+
+/*#################################################################################################################################*/
+/*#################################################################################################################################*/
+/*#################################################################################################################################*/ 	
+/*#################################################################################################################################*/
+/*page de connexion*/
+
+
+
+/* #corp_connexion  Modif par jm 11/02/2013
+{
+    position: absolute;
+    top:200px;
+    left: 10%;
+    right: 10%;
+    
+}
+*/ 
+
+#text_connexion
+{
+    text-align: center;
+    position:absolute;
+    left:30%;
+    top: 300px;
+    height: 35%;
+    width: 50%;
+    z-index:13;
+   
+}
+
+#img_connexion     /*Modif par jm 11/02/2013*/
+{
+    position: absolute;
+    display: inline-block;
+    top: 140px;
+    left: 10%;
+    height: 20%;
+    width: 100%;
+    z-index:13;
+}
+#logo1 /* Modification apportée par Jean-Marie le 12/2/2013 */
+{
+    width:140px;
+    height:140px;  
+    position: absolute;
+    left:0%;
+}
+
+#logo1:hover /* Modification apportée par Jean-Marie le 12/2/2013 */
+{
+    height:150px;
+    width:150px; 
+    position: absolute;
+    left:0%;
+} 
+
+#logo2/* Modification apportée par Jean-Marie le 12/2/2013 */
+{
+    width:140px;
+    height:140px;
+    position: absolute;
+    left:30%;
+    
+}
+
+#logo2:hover /* Modification apportée par Jean-Marie le 12/2/2013 */
+{
+    height:150px;
+    width:150px;  
+    position: absolute;
+    left:30%;
+} 
+
+#logo3 /* Modification apportée par Jean-Marie le 12/2/2013 */
+{
+    width:140px;
+    height:140px;
+    position: absolute;
+    left:60%;
+   
+}
+
+#logo3:hover /* Modification apportée par Jean-Marie le 12/2/2013 */
+{
+    height:150px;
+    width:150px;  
+    position: absolute;
+    left:60%;
+} 
+
+/* #droite_connexion  Modif par jm le 11/02/2013
+{
+    position: absolute ;
+    left: 365px;
+    
+    height: 100%;
+}
+ */
+
+#ipf_logo   /* Modif par jm 11/02/2013 */
+{
+	position:absolute;
+	left:40px;
+	top:230px;
+	z-index: 12;
+}
+
+#form_connexion/*modif par cam 20/11/2012*/
+{
+    font-size: 1em;
+    	
+    height: 45px;
+    width: 100%;
+    position:absolute;
+    top: 280px;
+    
+
+}
+
+
+.button2 /*Modification apportée par Jean-Marie le 20/11/2012 à 14h23*/
+{
+   
+    position: absolute;
+    right:-65px; 
+    background-color: #ff5c00;
+    border: none;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow:  -1px  -1px #000000;
+    border-radius:40px;
+    margin:  7px;
+    height: 30px;
+    -webkit-box-shadow: 1px 1px 1px 1px #565455;
+    box-shadow: 1px 1px 1px 1px #565455; 
+    
+}
+.button2:hover /*Modification apportée par Jean-Marie le 20/11/2012 à 14h23*/
+{
+   
+    position: absolute;
+    right:-65px; 
+    background-color: #ffffff;
+    color: #ff5c00;
+    border: none;
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+    text-align: center;
+    text-shadow:  -1px  -1px #000000;
+    border-radius:40px;
+    margin:  7px;
+    height: 30px;
+    -webkit-box-shadow: 1px 1px 1px 1px #565455;
+    box-shadow: 1px 1px 1px 1px #565455; 
+    
+}
+
+#barre_
+{
+    background-color: #CDDE47;
+    -webkit-box-shadow: 2px 2px 2px 2px #33302c;
+    box-shadow: 2px 2px 2px 2px #33302c;
+    position:relative;
+    z-index: 10;
+    top: 200px;
+    height: 480px;
+    width: 90%;
+}
+
+#barre_couleur
+{
+   
+    position: absolute;;
+    top:200px;
+    left:-5%;
+    height: 480px;
+    width: 97%;
+    background-color:  #ff5c00;
+    -webkit-box-shadow: 3px 3px 3px 1px #33302c;
+    box-shadow: 3px 3px 3px 1px #33302c; 
+    z-index: 2;
+    /*rotation*/
+    
+    transform:rotate(1.5deg);
+    -ms-transform:rotate(1.5deg); /* Internet Explorer */
+    -moz-transform:rotate(1.5deg); /* Firefox */
+    -webkit-transform:rotate(1.5deg); /* Safari et Chrome */
+    -o-transform:rotate(1.5deg); /* Opera */
+}
+#barre_couleur2
+{
+   
+    position: absolute;
+    top:200px;
+    left:-5%;
+    height: 480px;
+    width: 99%;   
+    background-color:  #48c1dc;
+    -webkit-box-shadow: 2px 2px 2px 3px #33302c;
+    box-shadow: 2px 2px 2px 1px #33302c; 
+    z-index: 1;
+    /*rotation*/
+    
+    transform:rotate(-1.5deg);
+    -ms-transform:rotate(-1.5deg); /* Internet Explorer */
+    -moz-transform:rotate(-1.5deg); /* Firefox */
+    -webkit-transform:rotate(-1.5deg); /* Safari et Chrome */
+    -o-transform:rotate(-1.5deg); /* Opera */
+}
+
+
+
+
+
+
+
+
+/*#################################################################################################################################*/
+/*#################################################################################################################################*/
+/*page d'acceuil*/
+
+#menu_partage/*modifier le  20/11/2012 par camille
+             Menu a gauche sur la page d'aceuil*/
+{
+    background:url('../image/vert.png');
+    background-repeat: repeat;
+    border:dashed 3px #565455;
+    border-radius: 10px;
+    text-align: left;
+    height: 50%;
+    width: 15%;		
+    position: absolute;
+    left: 1%;	
+    top:55px;
+    padding-left: 7px;
+}
+#a_partage
+{
+    font-family: 'Lobster', cursive;  
+    color: #565455;
+    font-size: 1.6em;
+    text-decoration: underline;
+}
+#a_partage:hover
+{
+    font-family: 'Lobster', cursive; 
+    color: #565455;
+    font-size: 1.6em;
+    text-decoration: none;
+}
+
+#menu_droite/*modifier le  20/11/2012 par camille
+            partie englobant les deux menu de droite de l'aceuil'*/
+{
+    text-align: center;
+    height: 80%;
+    width: 15%;
+    position: absolute;
+    right: 1%;	
+    top: 55px;
+}
+
+
+#menu_cour/*modifier le  20/11/2012 par camille*/
+{
+    background:url('../image/bleu.png');
+    background-repeat: repeat;
+    width: 100%;
+    height: 70%;
+    margin-bottom: 10%;   
+    border:dashed 3px #565455;
+    border-radius: 10px;
+    text-align: center;	
+    padding-left: 7px;
+
+}	
+
+#menu_agenda	/*modifier le  20/11/2012 par camille*/
+{
+    background:url('../image/orange.png');
+    background-repeat: repeat;
+    width: 100%;
+    height: 30%;
+    border:dashed 3px #565455;
+    border-radius: 10px;
+    text-align: center;
+    padding-left: 7px;
+}	
+#acceuil_agenda
+{
+    position: absolute;
+    width: 100%;
+    font-family: 'Numans', sans-serif;
+    
+}
+
+/*#################################################################################################################################*/
+/*MUR*//*modifier le  21/11/2012 par camille*/
+
+/* message*/
+
+#message
+{
+    background-color: #dcdcdc;
+    width: 100%;
+    border: solid 3px #48c1dc;
+    margin-bottom: 5px;
+}
+
+#coordonnee_message
+{
+    font-family: 'Lobster', cursive;
+    height: 20px;
+    display: inline;
+}
+
+#date_message
+{
+    float: right;
+    margin-right: 5px;
+}
+
+#image_message
+{
+    width:80px;
+    height: 100px;
+}
+
+#suprimer
+{
+    display: inline-block;
+}
+#contenu_message
+{  
+    position: relative;
+    left: 80px;
+    bottom: 90px; 
+    width: 90%;
+    
+}
+#commentaire
+{
+    width: 96%;
+    margin-left:2%; 
+    padding-left: 5px;
+    margin-bottom: 3px;
+    background-color: #ff5c00;
+}
+#message_com
+{
+    font-family: none;
+}
+#date_commentaire
+{
+    float: right;
+    margin-right: 5px;
+}
+#commentaire_message
+{ 
+    font-size: 1em;
+    width: 100%;
+    background-color: silver;
+    font-family: 'Lobster', cursive;
+    margin: 0px;
+    padding: 0px;
+}
+#commentaire_message_a
+{
+    text-decoration: none;
+    color: #565455;
+    padding: 4px;
+}
+#commentaire_message_a:hover
+{
+    text-decoration: underline;
+    color: #565455;
+    padding: 4px;
+}
+#commentaire_message_textarea
+{
+    width: 80%;
+    max-width: 96%;
+    margin-left: 2%;
+    height: 1.5em;
+}
+
+#vide_message
+{
+    height: 250px;
+}
+
+/*fin message*/
+#corp_centre
+{
+    position: absolute;
+    left: 17%;	
+    top: 55px;
+    width: 66%;
+    min-height: 90%;
+    height: auto;
+    z-index:3;
+}
+
+/*modifier le  21/11/2012 par camille*/
+#envoie_message
+{
+    border-top: solid 3px silver;
+    border-left: solid 3px silver;
+    border-right: solid 3px silver;
+    position:fixed ;
+    bottom: 45px;
+    width: 66%;
+    min-height: 200px;
+    height: 200px;
+    background-color: #dcdcdc;
+    z-index:5;
+    
+}
+#bouton
+{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;	
+}
+#message_interieur
+{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 50px;
+    height: 100%;
+    
+}
+
+/*modifier le  21/11/2012 par camille*/
+#envoyer_bas > textarea
+{
+    width: 99%;
+    height: 30%;
+    min-height: 20px;
+    min-width: 300px;
+    margin-top: 10px;
+}
+#div_destina
+{
+    height: 50px;
+    width: 100%;
+    display: block;
+    position: absolute;
+}
+#envoyer_bas
+{
+    position: absolute;
+    top: 50px;
+    height: 100%;
+    width: 100%;
+}
+/*modifier le  21/11/2012 par camille*/
+#input_envoyer
+{
+    width: 97%;
+    min-width: 250px;
+    position: absolute;
+    right: 5px;
+    left: 20px;	
+    bottom: 1px;
+}
+#a_envoyer
+{
+    text-decoration: underline;
+    position: absolute;
+    bottom: 1px;
+    
+}
+#a_envoyer:hover
+{
+    text-decoration: none;
+    position: absolute;
+    bottom: 1px;
+    
+}
+
+
+/*modifier le  21/11/2012 par camille*/
+#message_interieur > span
+{
+    font-family: 'Poiret One', cursive;
+   	
+
+}
+
+
+#destina
+{
+    text-decoration: underline;
+   
+}
+#destina:hover
+{
+    text-decoration: none;
+       
+}
+/*##############################################################################################"
+page cour
+####################################################################################################"""*/
+#corp_cour
+{
+    height: 100%;
+    width: 100%;
+    padding-top: 20%;
+       
+}
+#cour_ligne
+{
+    height: 25%;
+    width: 100%;
+    display: inline;    
+}
+#cour
+{
+    background:url('../image/orange.png');
+    background-repeat: repeat;
+    margin-top: 20px;
+    display: inline-block;
+    height: 100%;
+    width: 20%;
+    margin-right: 10px;
+    margin-left: 10px;
+    border:dashed 3px #565455;
+    border-radius: 10px;
+    text-align: center;	
+    padding-left: 7px;
+}
+#cour:hover
+{
+    background:url('../image/bleu.png');
+    background-repeat: repeat;
+    margin-top: 20px;
+    display: inline-block;
+    height: 100%;
+    width: 20%;
+    margin-right: 10px;
+    margin-left: 10px;
+    border:dashed 3px #565455;
+    border-radius: 10px;
+    text-align: center;	
+    padding-left: 7px;
+}
+#cour > input[type=submit]
+{
+    
+    font-size: 1.5em;
+    font-family: 'Coustard', serif;
+    color: #565455;
+    text-decoration: underline;  
+}
+#cour > input[type=submit]:hover
+{
+    font-size: 1.5em;
+    font-family: 'Coustard', serif;
+    color: #565455;
+    text-decoration: none;  
+}
+
+/*#################################################################################################################################*/
+/*#################################################################################################################################*/
+/* partage uploader*/
+#upload_fichier_partage
+{
+    background:url('../image/bleu.png');
+    background-repeat: repeat;
+    border:dashed 3px #565455;
+    border-radius: 10px;
+    position: absolute;
+    left: 10%;
+    top: 4%;
+    width: 80%;
+    height: 24%;
+    text-align: center;
+    
+}
+#fichier_level
+{
+    font-family: 'Lobster', cursive;
+}
+#bouton_upload
+{
+    float: right;
+    margin-right: 30px;
+}
+#fichier_parcourir
+{
+    width: 60%;
+    background-color: #ff5c00;
+}
+#fichier_description
+{
+    width: 60%;
+}
+
+/*page partage*//*modifier par camille le 21/11/2012*/
+#partage_table
+{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    border:solid 3px #565455;
+    border-collapse: collapse;
+    width: 80%;
+
+}
+
+#partage_td_titre
+{
+    border:solid 2px #565455;
+    width: 33%;
+    background-color: #ff5c00;
+    padding: 2px;
+}
+#partage_td
+{
+    border:solid 2px #565455;
+    width: 33%;
+    background-color: #CDDE47;
+    padding: 2px;
+}
+
+
+/*#################################################################################################################################*/
+/*#################################################################################################################################*/
+
+/*page paramètrage*//*modifier par camille le 21/11/2012*/
+#parametre
+{
+    height: 70%;
+    width: 40%;
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    text-align: left;
+}
+
+
+#identiter /*le  20/11/2012 par camille*/
+{
+    background:url('../image/vert.png');
+    background-repeat: repeat;
+    border:dashed 3px #565455;
+    border-radius: 10px;
+    height: 20%;
+    width: 100%;		
+    position: absolute;
+    top:10%;
+    padding-left: 7px;
+    padding-top: 7px;
+
+}
+
+#parametre_form /*le  20/11/2012 par camille*/
+{
+    background:url('../image/bleu.png');
+    background-repeat: repeat;
+    border:dashed 3px #565455;
+    border-radius: 10px;
+    height: 60%;
+    width: 100%;		
+    position: absolute;
+    top:35%;
+    padding-left: 7px;
+    padding-top: 7px;
+}
+
+
+
+
+
+
+
+/*#################################################################################################################################*/
+/*#################################################################################################################################*/
+/*#################################################################################################################################*/
+/*#################################################################################################################################*/
+
+/*-------------bloc php---------------------*/
+
+/*#################################################################################################################################*/
+/*menu*/
+#menu_all
+{
+    position: fixed;
+    width: 100%;
+}
+
+#li_menu/*modif cam 20/11/2012*/
+{
+    display:inline;
+    margin-left: 10px;
+    font-size:1.5em;
+    font-family: 'Poiret One', cursive;
+}
+
+#li_user
+{
+    display:inline;
+    float:right;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size:1em;
+    font-family: 'Poiret One', cursive;/*modif cam 20/11/2012*/
+}
+#li_menu > a:hover/*modif cam 20/11/2012*/
+{
+    text-decoration: none;
+}
+#li_user > a:hover/*modif cam 20/11/2012*/
+{
+    text-decoration: none;
+}
+
+#ul_menu
+{
+    margin:0;
+    padding:0;
+    height:31px;/*modif cam 20/11/2012*/
+    background:#CDDE47;
+}
+
+#menu a /*modif cam 20/11/2012*/
+{
+    color:#565455;
+    
+}
+#menu
+{
+    background-color: #dcdcdc;
+    -webkit-box-shadow: 2px 2px 2px 2px #33302c;
+    box-shadow: 2px 2px 2px 2px #33302c;
+    position: relative;
+    z-index: 20;
+}
+#menu_couleur
+{
+   
+    position: relative;
+    top:-29px;
+    height: 36px;
+    width: 100%;
+    background-color:  #ff5c00;
+    -webkit-box-shadow: 3px 3px 3px 1px #33302c;
+    box-shadow: 3px 3px 3px 1px #33302c; 
+    z-index: 19;
+    /*rotation*/
+    
+    transform:rotate(0.5deg);
+    -ms-transform:rotate(0.5deg); /* Internet Explorer */
+    -moz-transform:rotate(0.5deg); /* Firefox */
+    -webkit-transform:rotate(0.5deg); /* Safari et Chrome */
+    -o-transform:rotate(0.5deg); /* Opera */
+}
+#menu_couleur2
+{
+   
+    position: relative;
+    top:-67px;
+    height: 36px;
+    width: 100%;
+    background-color:  #48c1dc;
+    -webkit-box-shadow: 2px 2px 2px 3px #33302c;
+    box-shadow: 2px 2px 2px 1px #33302c; 
+    z-index: 18;
+    /*rotation*/
+    
+    transform:rotate(-0.5deg);
+    -ms-transform:rotate(-0.5deg); /* Internet Explorer */
+    -moz-transform:rotate(-0.5deg); /* Firefox */
+    -webkit-transform:rotate(-0.5deg); /* Safari et Chrome */
+    -o-transform:rotate(-0.5deg); /* Opera */
+}
+
+/*#################################################################################################################################*/
+/*mention legal*/
+
+#mention_legale
+{
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 40px;
+    z-index:4;
+    background-color: silver;
+    padding-top: 5px;
+}
+
+
+/*###################################################################################################################################*/
+/*page administration*/
+
+#bloc_admin /*le  20/11/2012 par camille*/
+{
+    background:url('../image/vert.png');
+    background-repeat: repeat;
+    border:dashed 3px #565455;
+    border-radius: 10px;
+    width: 100%;		
+   
+    padding-left: 7px;
+    padding-top: 7px;
+    margin-top: 20px;
+}
+
+/*Ce document a été réalisé en octobre 2012. 
+Dans le cadre d'un projet dans l'école iris, 
+par camille pire, maxime maréchal et jean-marie pujade.*/

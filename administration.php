@@ -102,8 +102,18 @@
                                    <b>Nom d'utilisateur: </b><input type='text' name='user_nom'/>
                                    <b>Prénom d'utilisateur: </b><input type='text' name='user_prenom'/><br>
                                    <b>Mail d'utilisateur: </b><input type='E-mail' name='user_mail' value='@moniris.com' id='input_mail'/>
-                                   <b>Mot de passe de l'utilisateur: </b><input type='password' name='user_password'/>
-
+                                   <b>Mot de passe de l'utilisateur: </b><input type='password' name='user_password'/><br>
+                                   <b>Classe (si eleve): </b><select name='cour_classe'><option value ='null'>Choisir</option>";
+                   //classe
+                                    $requete_classe = "select ID_CLASSE, NOM_CLASSE  from CLASSE";
+                                    $reponse_classe = $bdd->query($requete_classe);
+                                    while($donnees_classe = $reponse_classe -> fetch()){
+                                        $id=$donnees_classe['ID_CLASSE'];
+                                        $nom_classe = $donnees_classe['NOM_CLASSE'];
+                                        echo "<option value='$id'>$nom_classe</option>";
+                                    }
+                                   
+                                   echo"</select>
 
                                    <input type='hidden' name='type_insert' value='user'/>
                                    <input type='reset' name='Annulé' /><input type='submit' name='Confirmé' />		
@@ -140,7 +150,7 @@
                                 <form method='post' action = 'insert.php'>
                                    
                                    
-                                   <b>ID de la classe: </b><select name='section_classe'><option value ='null'>Choisir</option>";
+                                   <b>Classe: </b><select name='cour_classe'><option value ='null'>Choisir</option>";
                    //classe
                                     $requete_classe = "select ID_CLASSE, NOM_CLASSE  from CLASSE";
                                     $reponse_classe = $bdd->query($requete_classe);
@@ -152,19 +162,42 @@
                                    
                                    echo"</select>
                                        
-                                   <b>ID de la classe: </b><select name='section_classe'><option value ='null'>Choisir</option>";
+                                   <b>Matière: </b><select name='cour_matiere'><option value ='null'>Choisir</option>";
                    //matiere
-                                    $requete_classe = "select ID_CLASSE, NOM_CLASSE  from CLASSE";
-                                    $reponse_classe = $bdd->query($requete_classe);
-                                    while($donnees_classe = $reponse_classe -> fetch()){
-                                        $id=$donnees_classe['ID_CLASSE'];
-                                        $nom_classe = $donnees_classe['NOM_CLASSE'];
-                                        echo "<option value='$id'>$nom_classe</option>";
+                                    $requete_MATIERE = "select ID_MATIERE, NOM_MATIERE  from MATIERE";
+                                    $reponse_MATIERE = $bdd->query($requete_MATIERE);
+                                    while($donnees_MATIERE = $reponse_MATIERE -> fetch()){
+                                        $id=$donnees_MATIERE['ID_MATIERE'];
+                                        $nom_MATIERE = $donnees_MATIERE['NOM_MATIERE'];
+                                        echo "<option value='$id'>$nom_MATIERE</option>";
                                     }
                                    
                                    echo"</select>
+                                       
+                                  <b>Salle: </b><select name='cour_salle'><option value ='null'>Choisir</option>";
+                   //salle
+                                    $requete_salle = "select ID_SALLE, NUM_SALLE  from SALLE";
+                                    $reponse_salle = $bdd->query($requete_salle);
+                                    while($donnees_salle = $reponse_salle -> fetch()){
+                                        $id=$donnees_salle['ID_SALLE'];
+                                        $num_salle = $donnees_salle['NUM_SALLE'];
+                                        echo "<option value='$id'>$num_salle</option>";
+                                    }
+                                   
+                                   echo"</select>   
+                                       
+                                       <b>Professeur: </b><select name='cour_prof'><option value ='null'>Choisir</option>";
+                   //ProfesseurUCASE(LEFT(CompanyIndustry, 1)
+                                    $requete_professeur = "select ID_USER, concat(PRENOM_USER,' ',upper(NOM_USER)) as nom  from PROFFESSEUR";
+                                    $reponse_professeur = $bdd->query($requete_professeur);
+                                    while($donnees_professeur = $reponse_professeur -> fetch()){
+                                        $id=$donnees_professeur['ID_USER'];
+                                        $nom_professeur = $donnees_professeur['nom'];
+                                        echo "<option value='$id'>$nom_professeur</option>";
+                                    }
+                                   
+                                   echo"</select>   
 
-                                   <b>Nom de la classe (sio2devlm, sio1A, etc): </b><input type='text' name='classe_nom' />
                                    
                                    <input type='hidden' name='type_insert' value='cour'/>
                                    <input type='reset' name='Annulé' /><input type='submit' name='Confirmé' />		

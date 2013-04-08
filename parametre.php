@@ -47,7 +47,7 @@ if ($_SESSION['level'] == 2) {
                                                             </form><br>';
 }
 ?>   
-                                            <form method="post" action="changements_pwd.php">
+                                            <form method="post" action="changement_pwd.php">
                                                 <h3>Changer de mot de passe:</h3><br>
                                                     <input type="password" name="OldPwd" /><b>Ancien mot de passe</b><br>
                                                         <input type="password" name="NewPwd" /><b>Nouveau mot de passe</b><br>		

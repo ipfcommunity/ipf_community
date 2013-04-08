@@ -281,7 +281,7 @@
                                                         $donnee_salle = $reponse_salle->fetch(PDO::FETCH_ASSOC);
                                                         
                                                 $prof = $donnees['ID_USER'];
-                                                        $requete_prof = "SELECT concat(PRENOM_USER,' ',upper(NOM_USER)) as nom  from IPF_USER WHERE ID_USER = '$prof'";
+                                                        $requete_prof = "SELECT concat(PRENOM_USER,' ',NOM_USER) as nom  from IPF_USER WHERE ID_USER = '$prof'";
                                                         $reponse_prof = $bdd->query($requete_prof);
                                                         $donnee_prof = $reponse_prof->fetch(PDO::FETCH_ASSOC);        
                                                         

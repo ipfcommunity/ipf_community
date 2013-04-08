@@ -28,10 +28,9 @@ if ($new_pass == $new_pass_conf)
     {
          
         //si oui on update le nouveau mot de passe dans la bdd
-   $bdd->exec("update ipf_user SET MDP = md5('$new_pass') WHERE id_user = ' $login ' ");
+   $bdd->exec("update ipf_user SET MDP = password('$new_pass') WHERE id_user=' $login ' ");
              
-        echo "mot de passe change cher $login "; // là j'ai mis la variable $login pour vérifier que c'est bien la bonne personne à qui on s'adresse...
-                
+        echo "mot de passe change cher $login "; 
     }
     else
     {
@@ -42,8 +41,13 @@ else
 {
     echo "Mot de passe de confirmation incorrect";
 }
+
 }
+
+
+
 catch (Exception $e) {
                         die('Erreur : ' . $e->getMessage());
                     }
+flush();
 ?>

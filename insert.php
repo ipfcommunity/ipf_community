@@ -20,8 +20,12 @@ $type = $_POST['type_insert'];
                         elseif ($type == 'user') {  
                             
                         } 
-     // si user   
+     // si salle  
                         elseif ($type == 'salle') {  
+                            
+                        }
+    // si salle  
+                        elseif ($type == 'cour') {  
                             
                         }
                         

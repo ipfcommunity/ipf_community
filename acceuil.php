@@ -28,7 +28,7 @@
                         echo "<div id='menu_partage'>
             <h3>Fichier:</h3>	<br>";
                         $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
-                        $bdd = new PDO('mysql:host=localhost;dbname=ipf_com', $_SESSION['login'], $_SESSION['pwd'], $pdo_options);
+                        $bdd = new PDO('mysql:host='.$_SESSION["host"].';'.$_SESSION["dbase"], $_SESSION['login'], $_SESSION['pwd'], $pdo_options);
 
                         $requete = "select * from vrac order by date_depot desc";
                         $reponse = $bdd->query($requete);
@@ -95,7 +95,7 @@
                     try {
                         
                   $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
-                            $bdd = new PDO('mysql:host=localhost;dbname=ipf_com', $_SESSION['login'], $_SESSION['pwd'], $pdo_options);
+                            $bdd = new PDO('mysql:host='.$_SESSION["host"].';'.$_SESSION["dbase"], $_SESSION['login'], $_SESSION['pwd'], $pdo_options);
 
                         echo "<div id='menu_cour'>
                             <h3>Cours:</h3>";

@@ -23,6 +23,8 @@
     <body>
                     <?php
         session_start();
+            $_SESSION["host"] = 'localhost';
+            $_SESSION["dbase"]= 'dbname=ipf_com';
           $erreur_connexion = $_SESSION['erreur_connexion'];
                 if ($erreur_connexion == 1) {
                    echo"<SCRIPT type='text/javascript'>  alert('Email ou mot de passe incorrect');</script>";

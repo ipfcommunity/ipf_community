@@ -23,9 +23,10 @@ function faire_Session($id, $level, $nom, $prenom, $mail,$classe,$idclasse, $log
 // main
 
 try {
-    $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
-    $bdd = new PDO('mysql:host=localhost;dbname=ipf_com', 'generique', 'iris', $pdo_options);
     session_start();
+    $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
+    $bdd = new PDO('mysql:host='.$_SESSION["host"].';'.$_SESSION["dbase"], 'generique', 'iris', $pdo_options);
+    
     $_SESSION['erreur_connexion'] = null;
 	
 //Requête de sécurité contre les injections SQL

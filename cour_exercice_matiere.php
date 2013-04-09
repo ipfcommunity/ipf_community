@@ -47,7 +47,7 @@
            echo "<h3>".$titre.$_POST['titre']."</h3>";
            
                         $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
-                        $bdd = new PDO('mysql:host=localhost;dbname=ipf_com', $_SESSION['login'], $_SESSION['pwd'], $pdo_options);
+                        $bdd = new PDO('mysql:host='.$_SESSION["host"].';'.$_SESSION["dbase"], $_SESSION['login'], $_SESSION['pwd'], $pdo_options);
 
                         $requete = "select * from cour_exercice where ID_CLASSE ='$id_classe' and ID_MATIERE = '$id_matiere' and COUR_EXERCICE = '$cour_exercice' order by date_depot desc";
                         $reponse = $bdd->query($requete);

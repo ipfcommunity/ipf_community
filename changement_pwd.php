@@ -9,7 +9,7 @@ $new_pass_conf=$_POST["ConfirmPwd"];
 $pass_old=$_POST["OldPwd"];
 
 $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
-$bdd = new PDO('mysql:host=localhost;dbname=ipf_com', $_SESSION['login'], $_SESSION['pwd'], $pdo_options);
+$bdd = new PDO('mysql:host='.$_SESSION["host"].';'.$_SESSION["dbase"], $_SESSION['login'], $_SESSION['pwd'], $pdo_options);
 
 
 // on compare si le nouveau passe correspond à la confirmation

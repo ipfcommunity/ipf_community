@@ -46,7 +46,7 @@
                 if ($_SESSION['level'] == 2) {
                     try {
                         $pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
-                        $bdd = new PDO('mysql:host=localhost;dbname=ipf_com', $_SESSION['login'], $_SESSION['pwd'], $pdo_options);
+                        $bdd = new PDO('mysql:host='.$_SESSION["host"].';'.$_SESSION["dbase"], $_SESSION['login'], $_SESSION['pwd'], $pdo_options);
 
                         $requete = "select * from vrac order by date_depot desc";
                         $reponse = $bdd->query($requete);

@@ -188,7 +188,7 @@
                                        
                                        <b>Professeur: </b><select name='cour_prof'><option value ='null'>Choisir</option>";
                    //Professeur
-                                    $requete_professeur = "select ID_USER, concat(PRENOM_USER,' ',NOM_USER) as nom  from PROFFESSEUR";
+                                    $requete_professeur = "select ID_USER, concat(PRENOM_USER,' ',NOM_USER) as nom  from PROFESSEUR";
                                     $reponse_professeur = $bdd->query($requete_professeur);
                                     while($donnees_professeur = $reponse_professeur -> fetch()){
                                         $id=$donnees_professeur['ID_USER'];

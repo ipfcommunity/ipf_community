@@ -46,7 +46,7 @@ try {
                 break;
             case 2 : $level = "<img src='image/etudiant.png' alt='Eleve' /><br>";
                 break;
-            case 3 : $level = "<img src='image/prof.png' alt='Proffesseur' /><br>";
+            case 3 : $level = "<img src='image/prof.png' alt='PROFESSEUR' /><br>";
                 break;
             case 4 : $level = "<img src='image/administration.png' alt='Administration' /><br>";
                 break;

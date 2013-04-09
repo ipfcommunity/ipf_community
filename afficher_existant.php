@@ -161,7 +161,7 @@
                                                          </tr>";
                                             }
                                     echo"</table><br>"; 
-                   //proffesseur
+                   //PROFESSEUR
                                     $requete = "select * from IPF_USER where NB_LEVEL = 3";
                                     $reponse = $bdd->query($requete);
                                     echo"<br><h3>Professeurs</h3><br>

@@ -53,8 +53,8 @@ declare nmod int;
 # compte dans les tables le nombre id_user qui son identique au nouvelle id_user 
 select count(*) into nu from IPF_USER where id_user = new.id_user;	
 select count(*) into ne from eleve where id_user = new.id_user;
-select count(*) into nprof from proffesseur where id_user = new.id_user;
-select count(*) into nmod from moderateur where id_user = new.id_user;
+select count(*) into nprof from PROFESSEUR where id_user = new.id_user;
+select count(*) into nmod from ADMINISTRATION where id_user = new.id_user;
 
 
 # dans le cas ou il y en a un il génére un message d'erreur
@@ -130,8 +130,8 @@ declare nmod int;
 # compte dans les tables le nombre id_user qui son identique au nouvelle id_user 
 select count(*) into nu from IPF_USER where id_user = new.id_user;	
 select count(*) into na from administrateur where id_user = new.id_user;
-select count(*) into nprof from proffesseur where id_user = new.id_user;
-select count(*) into nmod from moderateur where id_user = new.id_user;
+select count(*) into nprof from PROFESSEUR where id_user = new.id_user;
+select count(*) into nmod from ADMINISTRATION where id_user = new.id_user;
 
 
 # dans le cas ou il y en a un il génére un message d'erreur
@@ -185,7 +185,7 @@ Delimiter ;
 
 
 # #############################################
-#           PROFFESSEUR
+#           PROFESSEUR
 # #############################################
 
 #       INSERTION
@@ -194,7 +194,7 @@ Delimiter //
 
 
 create trigger InsertProf
-before Insert ON PROFFESSEUR
+before Insert ON PROFESSEUR
 for EACH row
 begin
 
@@ -209,13 +209,13 @@ declare nmod int;
 select count(*) into nu from IPF_USER where id_user = new.id_user;	
 select count(*) into ne from eleve where id_user = new.id_user;
 select count(*) into na from administrateur where id_user = new.id_user;
-select count(*) into nmod from moderateur where id_user = new.id_user;
+select count(*) into nmod from ADMINISTRATION where id_user = new.id_user;
 
 
 # dans le cas ou il y en a un il génére un message d'erreur
 if ( ne > 0) or (na > 0) or (nmod > 0) or (nu > 0)
 	then
-		delete from proffesseur where id_user=new.id_user;
+		delete from PROFESSEUR where id_user=new.id_user;
         else
             
                 insert into IPF_USER values(new.id_user,3,new.nom_user,new.prenom_user,new.mail_ecole,new.mdp);
@@ -232,7 +232,7 @@ end;
 #                MODIFICATION
 
 create trigger updateProf
-before update ON PROFFESSEUR 
+before update ON PROFESSEUR 
 for EACH row
 begin
 
@@ -251,7 +251,7 @@ END;
 #               SUPRESSION
 
 create trigger deleteProf
-before delete ON PROFFESSEUR 
+before delete ON PROFESSEUR 
 for EACH row
 begin
 
@@ -264,7 +264,7 @@ Delimiter ;
 
 
 # #############################################
-#           MODERATEUR
+#           ADMINISTRATION
 # #############################################
 
 #       INSERTION
@@ -273,7 +273,7 @@ Delimiter //
 
 
 create trigger InsertMod
-before Insert ON MODERATEUR 
+before Insert ON ADMINISTRATION 
 for EACH row
 begin
 
@@ -287,14 +287,14 @@ declare nmod int;
 # compte dans les tables le nombre id_user qui son identique au nouvelle id_user 
 select count(*) into nu from IPF_USER where id_user = new.id_user;	
 select count(*) into ne from eleve where id_user = new.id_user;
-select count(*) into nprof from proffesseur where id_user = new.id_user;
+select count(*) into nprof from PROFESSEUR where id_user = new.id_user;
 select count(*) into na from administrateur where id_user = new.id_user;
 
 
 # dans le cas ou il y en a un il génére un message d'erreur
 if ( ne > 0) or (nprof > 0) or (na > 0) or (nu > 0)
 	then
-		delete from moderateur where id_user=new.id_user;
+		delete from ADMINISTRATION where id_user=new.id_user;
         else
             
                 insert into IPF_USER values(new.id_user,4,new.nom_user,new.prenom_user,new.mail_ecole,new.mdp);
@@ -307,7 +307,7 @@ end;
 #                MODIFICATION
 
 create trigger updateMod
-before update ON MODERATEUR 
+before update ON ADMINISTRATION 
 for EACH row
 begin
 
@@ -326,7 +326,7 @@ END;
 #               SUPRESSION
 
 create trigger deleteMod
-before delete ON MODERATEUR 
+before delete ON ADMINISTRATION 
 for EACH row
 begin
 

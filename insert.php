@@ -130,7 +130,7 @@ $type = $_POST['type_insert'];
                                     } elseif ($user_level == 3) {
 
                                         //insertion de l'a matiere'utilisateur          
-                                              $requete_insert_user = " insert into PROFFESSEUR values(:ID_USER, :NOM_USER, :PRENOM_USER, :MAIL_ECOLE, :MDP)";
+                                              $requete_insert_user = " insert into PROFESSEUR values(:ID_USER, :NOM_USER, :PRENOM_USER, :MAIL_ECOLE, :MDP)";
                                               $reponse_insert_user = $bdd->prepare($requete_insert_user);
                                               $insert_user = $reponse_insert_user -> execute(array(
                                                   'ID_USER' => $id_user,
@@ -143,7 +143,7 @@ $type = $_POST['type_insert'];
                                     } elseif ($user_level == 4) {
 
                                         //insertion de l'a matiere'utilisateur          
-                                              $requete_insert_user = " insert into MODERATEUR values(:ID_USER, :NOM_USER, :PRENOM_USER, :MAIL_ECOLE, :MDP)";
+                                              $requete_insert_user = " insert into ADMINISTRATION values(:ID_USER, :NOM_USER, :PRENOM_USER, :MAIL_ECOLE, :MDP)";
                                               $reponse_insert_user = $bdd->prepare($requete_insert_user);
                                               $insert_user = $reponse_insert_user -> execute(array(
                                                   'ID_USER' => $id_user,

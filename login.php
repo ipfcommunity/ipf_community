@@ -104,10 +104,10 @@ try {
             case 4:
                 if($reponse['NB_LEVEL'] == 4)
                 {
-                    $classe = 'Moderateur';
+                    $classe = 'ADMINISTRATION';
                 }
                 faire_Session($reponse['ID_USER'], $reponse['NB_LEVEL'], $reponse['NOM_USER'],
-                                $reponse['PRENOM_USER'], $reponse['MAIL_ECOLE'], $classe, 'NULL','moderateur', 'iris');
+                                $reponse['PRENOM_USER'], $reponse['MAIL_ECOLE'], $classe, 'NULL','ADMINISTRATION', 'iris');
                 break;
                 
             default: break;

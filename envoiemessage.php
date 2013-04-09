@@ -108,7 +108,7 @@ if (get_magic_quotes_gpc()) {
     
 //groupe en fonction du professeur        
     } elseif ($destinataire[$count] == "professeur") { // test sur le groupe professeur ce qui donne accés au professeur de la classe (numero : 3)
-                        //pour les eleve qui écrive a leurs proffesseurs
+                        //pour les eleve qui écrive a leurs PROFESSEURs
                         if ($_SESSION['level'] == 2) {// test eleve
                                     $classe_prof_eleve = $_SESSION['idclasse'];
                                     $requete_prof_eleve = "select ID_USER from ENSEIGNE where ID_CLASSE = '$classe_prof_eleve' and ID_USER != '$id_expediteur'";
@@ -150,7 +150,7 @@ if (get_magic_quotes_gpc()) {
                 // groupe de diffusion a l'administration
                         }
     } elseif ($destinataire[$count] == "administration") {// test sur le groupe administration ce qui donne accés a l'administration (numero : 4)
-        $requete_prof = "select ID_USER from MODERATEUR where ID_USER != '$id_expediteur'";
+        $requete_prof = "select ID_USER from ADMINISTRATION where ID_USER != '$id_expediteur'";
         $reponse_prof = $bdd->query($requete_prof);
         while ($donnees_prof = $reponse_prof->fetch()) {
 

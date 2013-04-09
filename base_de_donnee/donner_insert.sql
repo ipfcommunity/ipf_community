@@ -19,7 +19,7 @@ insert into ADMINISTRATEUR (ID_USER,NOM_USER,PRENOM_USER,MAIL_ECOLE,MDP)
 
 
 drop user administrateur@'localhost';
-drop user moderateur@'localhost';
+drop user ADMINISTRATION@'localhost';
 drop user professeur@'localhost';
 drop user eleve@'localhost';
 drop user generique@'localhost';
@@ -27,8 +27,8 @@ drop user generique@'localhost';
 Create user administrateur@'localhost' identified by 'iris';
 grant all on ipf_com.* to administrateur@'localhost' with grant option;
 
-Create user moderateur@'localhost' identified by 'iris';
-grant select,update,delete,insert on ipf_com.* to moderateur@'localhost';
+Create user ADMINISTRATION@'localhost' identified by 'iris';
+grant select,update,delete,insert on ipf_com.* to ADMINISTRATION@'localhost';
 
 Create user professeur@'localhost' identified by 'iris';
 grant all on ipf_com.* to professeur@'localhost';

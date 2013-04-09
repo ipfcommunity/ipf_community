@@ -20,7 +20,7 @@
                 $cour_exercice = $_POST['cour_exercice'];
 //module d'upload           
            if ($_SESSION['level']==3) {
-    echo "<!--upload des fichier cour pour les proffesseur-->
+    echo "<!--upload des fichier cour pour les PROFESSEUR-->
             <div id='upload_fichier_partage'>
                 <h3>Upload:</h3><br>
                 <form method='post' action='upload_cour.php' enctype='multipart/form-data'>

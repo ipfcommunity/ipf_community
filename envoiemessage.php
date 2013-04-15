@@ -28,12 +28,12 @@ try {
 	
 	// Sécurité contre les injections SQL
 	if (get_magic_quotes_gpc()) {
-    $message= stripslashes($_POST['message']);
+    $message= stripslashes(nl2br($_POST['message']));
 } else {
-    $message = $_POST['message'];
+    $message = nl2br($_POST['message']);
 }
 
-    $message=mysql_real_escape_string($message);
+ 
 	
 	
     
@@ -43,7 +43,7 @@ if (get_magic_quotes_gpc()) {
     $destinataires = $_POST['destinataire'];
 }
 
-    $destinataires=mysql_real_escape_string($destinataires);
+
 
         
         $test_dest = substr($destinataires, -1);
@@ -81,7 +81,35 @@ if (get_magic_quotes_gpc()) {
                         'ID_MESSAGE' => $id_message,
                         'CONTENU' => $message));
             }
-            
+       //fonction envoie mail automatique
+            $requete_general_mail = "select MAIL_PERSO from ELEVE where GENERALE  = 1";
+            $reponse_general_mail = $bdd->query($requete_general_mail);
+            while ($donnees_general_mail = $reponse_general_mail->fetch()) {
+                
+        require_once "Mail.php";
+
+        $from = "<ipfcommunity@gmail.com>";
+        $to = $donnees_general_mail['MAIL_PERSO'];
+        $subject = "Message IPF Community";
+        $body = $message;
+
+        $host = "ssl://smtp.gmail.com";
+        $port = "465";
+        $username = "ipfcommunity@gmail.com"; 
+        $password = "teahupoo";
+
+        $headers = array ('From' => $from,
+          'To' => $to,
+          'Subject' => $subject);
+        $smtp = Mail::factory('smtp',
+          array ('host' => $host,
+            'port' => $port,
+            'auth' => true,
+            'username' => $username,
+            'password' => $password));
+
+        $mail = $smtp->send($to, $headers, $body);
+            }
             
             
             // groupe en fonction de eleve de la classe                

@@ -114,13 +114,17 @@ $type = $_POST['type_insert'];
                                         } elseif ($user_level == 2) {
 
                                             //insertion de l'a matiere'utilisateur          
-                                              $requete_insert_eleve = " insert into ELEVE values(:ID_CLASSE,:ID_USER, :DATE_INSCRIPTION, :MAIL_PERSO,:NOM_USER, :PRENOM_USER, :MAIL_ECOLE, :MDP)";
+                                              $requete_insert_eleve = " insert into ELEVE values(:ID_CLASSE,:ID_USER, :DATE_INSCRIPTION, :MAIL_PERSO, :GENERALE, :ADMINISTRATION, :PROFESSEUR, :ELEVE, :NOM_USER, :PRENOM_USER, :MAIL_ECOLE, :MDP)";
                                               $reponse_insert_eleve = $bdd->prepare($requete_insert_eleve);
                                               $insert_eleve = $reponse_insert_eleve -> execute(array(                                                 
                                                   'ID_CLASSE' => $user_classe,
                                                   'ID_USER' => $id_user,
                                                   'DATE_INSCRIPTION' => $inscription_date,
                                                   'MAIL_PERSO' => NULL,
+                                                  'GENERALE' => FALSE,
+                                                  'ADMINISTRATION' => FALSE,
+                                                  'PROFESSEUR' => FALSE,
+                                                  'ELEVE' => FALSE,
                                                   'NOM_USER' => $user_nom,
                                                   'PRENOM_USER' => $user_prenom,
                                                   'MAIL_ECOLE' => $user_mail,

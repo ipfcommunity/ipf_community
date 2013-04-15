@@ -26,7 +26,7 @@
                             <b>Classe: </b><?php echo $_SESSION['classe']; ?><br>
                                 </div>
                                 <div id="parametre_form">
-                                    <form method="post">
+                                    <form method="post" action="mail_groupe.php">
                                         
 <?php
 
@@ -35,12 +35,11 @@ if ($_SESSION['level'] == 2) {
     echo "<b> Votre mail est: </b>" . $_SESSION['mail_perso'] . " <br>";
     echo ' <p>Ajouter votre adresse personnelle si vous voulez recevoir les messages des groupes que vous cochez:</p>
                                                     <p>				
-                                                        <input type="checkbox" name="groupe" value="1" />G&#233;n&#233;ral 
-                                                        <input type="checkbox" name="groupe" value="2" />Professeur 
-                                                        <input type="checkbox" name="groupe" value="3" />Administration 
-                                                        <input type="checkbox" name="groupe" value="4" />El&#233;ves 
-                                                        <input type="checkbox" name="groupe" value="5" />Messages priv&#233;es 
-                                                        <input type="checkbox" name="groupe" value="6" />BDE 
+                                                        <input type="checkbox" name="GENERALE" value="1" />G&#233;n&#233;ral 
+                                                        <input type="checkbox" name="PROFESSEUR" value="1" />Professeur 
+                                                        <input type="checkbox" name="ADMINISTRATION" value="1" />Administration 
+                                                        <input type="checkbox" name="ELEVE" value="1" />El&#233;ves 
+                                                        
                                                     </p><br>
                                                         <b>Votre e-mail personnel: </b><input type="email" name="email_perso" /><br>
                                                             <input type="submit" name="form_email" />

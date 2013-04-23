@@ -488,6 +488,7 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 
 #date_message
 {
+    display: inline-block;
     float: right;
     margin-right: 5px;
 }
@@ -500,7 +501,7 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 
 #suprimer
 {
-    display: inline-block;
+    display: block;
 }
 #contenu_message
 {  

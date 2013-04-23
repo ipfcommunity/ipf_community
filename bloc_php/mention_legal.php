@@ -6,7 +6,7 @@
 		
 		Nos formations : Bac Pro S.E.N. | BTS SIO - SLAM | BTS SIO - SISR | DEESINF | DEESWEB | DEESIRS | Master Informatique | Master E-Communication <br>
 		IRIS Formation Informatique. Paris. | IRIS, 6-8, impasse des Deux Cousins, 
-		75017 Paris | Tél. 01 44 01 86 70 | <A HREF="mailto:iris@groupeipf.com">iris@groupeipf.com</A> | <a href="plan_site.php" alt="lien plan site" title="lien plan site">Plan du site</a>
+		75017 Paris | Tél. 01 44 01 86 70 | <A HREF="mailto:iris@groupeipf.com">iris@groupeipf.com</A> 
 		</h6>	
 	</div>
 	

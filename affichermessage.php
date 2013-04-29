@@ -57,7 +57,9 @@ try {
         }// fin switch
         
         //écriture du message.                                        
-        echo "<div id='message'><div id = 'coordonnee_message'>" . $reponse_exp['nom'] . " > ";
+        echo "
+<!--message-->            
+                <div id='message'><div id = 'coordonnee_message'>" . $reponse_exp['nom'] . " > ";
 
         $id_message = $donnees_message['ID_MESSAGE'];
         $requete_destinataire2 = "select ID_USER_DEST from MESSAGE where id_message = '$id_message'";
@@ -128,7 +130,9 @@ try {
         //message
         $message_com = nl2br($donnees_commentaire['CONTENU_COMMENTAIRE']);
          $id_commentaire = $donnees_commentaire['ID_COM'];
-        echo "<div id='commentaire'><div id='coordonnee_commentaire'>".$reponse_exp_com['nom']."<div id='date_commentaire'>";
+        echo "
+<!--commentaire-->            
+            <div id='commentaire'><div id='coordonnee_commentaire'>".$reponse_exp_com['nom']."<div id='date_commentaire'>";
         
 //suprimé commentaire        
         if ($id_expediteur_com == $_SESSION['id'] or $_SESSION['level']==1) {

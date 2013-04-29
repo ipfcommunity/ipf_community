@@ -7,5 +7,5 @@ $id_commentaire_supprimer = $_POST['id_commentaire'];
 //supression des commentaires
     
  $bdd->query("delete from commentaire where ID_COM = " . $id_commentaire_supprimer);   
- header('location: /lesiteprojectcamille/acceuil.php');
+ header('location: ../acceuil.php');
 ?>

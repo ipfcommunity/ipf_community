@@ -88,7 +88,7 @@ if (get_magic_quotes_gpc()) {
          //          
          //   }
             
-            
+           mail('camillepire@gmail.com', 'sujet', 'message'); 
             // groupe en fonction de eleve de la classe                
         } elseif ($destinataire[$count] == "eleve" && $_SESSION['level'] == 2) { // test sur le groupe eleve ce qui donne accés a la classe (numero : 2)
             $classe_eleve = $_SESSION['idclasse'];

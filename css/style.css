@@ -492,6 +492,12 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
     float: right;
     margin-right: 5px;
 }
+#supprimer
+{
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
 
 #image_message
 {
@@ -516,7 +522,7 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
     width: 96%;
     margin-left:2%; 
     padding-left: 5px;
-    margin-bottom: 3px;
+    margin-bottom: 10px;
     background-color: #ff5c00;
 }
 #message_com
@@ -559,7 +565,7 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 
 #vide_message
 {
-    height: 250px;
+    height: 260px;
 }
 
 /*fin message*/
@@ -584,7 +590,7 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
     bottom: 45px;
     width: 66%;
     min-height: 200px;
-    height: 200px;
+    height: 210px;
     background-color: #dcdcdc;
     z-index:5;
     
@@ -599,7 +605,7 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 {
     position: absolute;
     left: 10px;
-    top: 10px;
+    top: 3px;
     right: 10px;
     bottom: 50px;
     height: 100%;
@@ -617,15 +623,16 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 }
 #div_destina
 {
-    height: 50px;
+    height: 58px;
     width: 100%;
     display: block;
     position: absolute;
+    top: 0px;
 }
 #envoyer_bas
 {
     position: absolute;
-    top: 50px;
+    top: 58px;
     height: 100%;
     width: 100%;
 }
@@ -666,14 +673,18 @@ button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 
 #destina
 {
-    text-decoration: underline;
+    display: inline;
    
 }
-#destina:hover
+#destina_boutton
 {
-    text-decoration: none;
-       
+    position: absolute;
+    top: 0px;
+    bottom: 8px;
+    margin-bottom: 3px;
+    width: 20px;
 }
+
 /*##############################################################################################"
 page cour
 ####################################################################################################"""*/

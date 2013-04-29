@@ -8,7 +8,7 @@
         <?php include("bloc_php/appel_css.php"); ?>
 
     </head>
-
+      
     <!--paramétrage du body pour l'horloge javascript-->
     <body onload="var timer = setInterval('horloge()', 1000);">    
         <?php include("bloc_php/menu.php"); ?>
@@ -62,18 +62,19 @@
                 <form name='envoyer'action="envoiemessage.php" method="post">
                     <div id="message_interieur">
                         <div id="div_destina">
-                            <span>Choisir un groupe de diffusions:</span>
-                            <span>   </span><span id="destina"> El&#232;ves</span>
-                            <span>   </span><span id="destina"> Professeurs</span>
-                            <span>   </span><span id="destina"> Administration</span>
-                            <span>   </span><span id="destina"> G&#233;n&#233;ral</span><br>
-
+                            <div id="detina_boutton">
+                                <span>Choisir un groupe de diffusions:</span>
+                                <span>   </span><input type="button" id="destina" value="Elève" OnClick="Copie(this)">
+                                <span>   </span><input type="button" id="destina" value="Professeur" OnClick="Copie(this)">
+                                <span>   </span><input type="button" id="destina" value="Administration" OnClick="Copie(this)">
+                                <span>   </span><input type="button" id="destina" value="Générale" OnClick="Copie(this)"><br>
+                            </div>
                             <span onclick="" id="a_envoyer">A:</span>
-                            <input type="text" name="destinataire" id="input_envoyer"/><br>
+                            <input type="text" name="destinataire" id="input_envoyer"/>
                         </div>
                         <div id="envoyer_bas">
-                            <span>Message:</span><br>
-                            <textarea name="message"></textarea>	<br>
+                            <span>Message:</span>
+                            <textarea name="message"></textarea>	
                         </div>
 
                         <div id="bouton">			

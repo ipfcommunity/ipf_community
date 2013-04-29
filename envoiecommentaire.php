@@ -24,10 +24,10 @@ try {
 	if (get_magic_quotes_gpc()) {
     $commentaire= stripslashes($_POST['commentaire']);
 } else {
-    $commentaire = $_POST['commentaire'];
+   $commentaire = nl2br($_POST['commentaire']);
 }
 
-    $commentaire=mysql_real_escape_string($commentaire);
+    
 	
 	
 	if (get_magic_quotes_gpc()) {

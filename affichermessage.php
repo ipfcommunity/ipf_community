@@ -6,6 +6,8 @@ try {
     $bdd = new PDO('mysql:host='.$_SESSION["host"].';'.$_SESSION["dbase"], $_SESSION['login'], $_SESSION['pwd'], $pdo_options);
     
     $user_destinataire = $_SESSION['id'];
+    
+    $count =0;
 //donnée sur la date actuelle
     $requete_curdate = "select year(curdate()) as year_cur, month(curdate()) as month_cur, day(curdate()) as day_cur";
     $reponse_curdate = $bdd->query($requete_curdate);
@@ -23,7 +25,7 @@ try {
                 from message 
                 where ID_USER_DEST = '$user_destinataire' or ID_USER = '$user_destinataire' or '$administrateur' = 1 group by ID_MESSAGE order by DATE_ENVOIE DESC";
         $reponse_message = $bdd->query($requete_message);
-        while ($donnees_message = $reponse_message->fetch()) {
+        while ($donnees_message = $reponse_message->fetch() and $count < 30) {
             
             //mise en forme de la date
         if ($donnees_message['annee_mes'] == $donnee_curdate['year_cur'] and $donnees_message['mois_mes'] == $donnee_curdate['month_cur'] 
@@ -128,6 +130,7 @@ try {
          $id_commentaire = $donnees_commentaire['ID_COM'];
         echo "<div id='commentaire'><div id='coordonnee_commentaire'>".$reponse_exp_com['nom']."<div id='date_commentaire'>";
         
+//suprimé commentaire        
         if ($id_expediteur_com == $_SESSION['id'] or $_SESSION['level']==1) {
                                
 
@@ -153,7 +156,7 @@ try {
                 
             </form>
                 </div></div></div>";
-            
+        $count++;    
         }// fin while message
     echo "<div id='vide_message'>&nbsp;</div>";
     }//fin try

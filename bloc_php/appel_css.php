@@ -10,6 +10,30 @@
 	
 
 	<script type="text/javascript">
+            
+                   function Copie(element){
+                       
+                       if(element.value === 'Elève'){
+                            document.getElementById("input_envoyer").value += 'eleve;';
+        
+                        }
+                        if(element.value === 'Professeur'){
+                            document.getElementById("input_envoyer").value += 'professeur;';
+        
+                        }
+                        if(element.value === 'Administration'){
+                            document.getElementById("input_envoyer").value += 'administration;';
+        
+                        }
+                        if(element.value === 'Générale'){
+                            document.getElementById("input_envoyer").value += 'general;';
+        
+                        }
+}
+            
+            
+            
+            
 var haut_max, timer_glisse, action_glisse, haut_fenetre = "";
 
 function deplie(blid) {

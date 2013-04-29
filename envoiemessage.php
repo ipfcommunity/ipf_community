@@ -84,7 +84,8 @@ if (get_magic_quotes_gpc()) {
        //fonction envoie mail automatique
          //   $requete_general_mail = "select MAIL_PERSO from ELEVE where GENERALE  = 1";
          //  $reponse_general_mail = $bdd->query($requete_general_mail);
-         //   while ($donnees_general_mail = $reponse_general_mail->fetch()) {       
+         //   while ($donnees_general_mail = $reponse_general_mail->fetch()) {
+         //          
          //   }
             
             

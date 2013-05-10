@@ -108,7 +108,7 @@ $type = $_POST['type_insert'];
                                                   'NOM_USER' => $user_nom,
                                                   'PRENOM_USER' => $user_prenom,
                                                   'MAIL_ECOLE' => $user_mail,
-                                                  'MDP' => $user_password));
+                                                  'MDP' => $user_password_md5));
 
 
                                         } elseif ($user_level == 2) {
@@ -141,7 +141,7 @@ $type = $_POST['type_insert'];
                                                   'NOM_USER' => $user_nom,
                                                   'PRENOM_USER' => $user_prenom,
                                                   'MAIL_ECOLE' => $user_mail,
-                                                  'MDP' => $user_password));
+                                                  'MDP' => $user_password_md5));
 
 
                                     } elseif ($user_level == 4) {
@@ -154,7 +154,7 @@ $type = $_POST['type_insert'];
                                                   'NOM_USER' => $user_nom,
                                                   'PRENOM_USER' => $user_prenom,
                                                   'MAIL_ECOLE' => $user_mail,
-                                                  'MDP' => $user_password));
+                                                  'MDP' => $user_password_md5));
 
 
                                     }         
